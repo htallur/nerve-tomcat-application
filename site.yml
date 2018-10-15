@@ -3,13 +3,11 @@
 
 - hosts: all
   remote_user: ec2-user
-  become: root
-  become_method: sudo
+  become: yes
   environment:
     http_proxy: http://172.31.13.6:3128
     https_proxy: http://172.31.13.6:3128
     no_proxy: 169.254.169.254
-
   roles:
     - selinux
     - tomcat
